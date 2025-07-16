@@ -6,7 +6,7 @@ const Accordion = () => {
   const [openId, setOpenId] = useState(null);
 
   const toggleAnswer = (id) => {
-    setOpenId(openId === id ? null : id);
+    setOpenId((prev) => (prev === id ? null : id));
   };
 
   return (
@@ -32,7 +32,7 @@ const Accordion = () => {
               className="w-full flex gap-2 items-start justify-between"
             >
               <div className="w-full bg-gray-100 p-[20px] rounded-sm overflow-hidden">
-                <span className="text-4xl md:text-5xl font-inter font-thin">
+                <span className="text-3xl md:text-5xl font-inter font-normal">
                   {item.question}
                 </span>
                 <AnimatePresence initial={false}>
@@ -64,16 +64,17 @@ const Accordion = () => {
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  strokeWidth="1"
+                  strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="lucide lucide-plus-icon lucide-plus size-[39.5px] md:size-[48px]"
+                  className="lucide lucide-plus-icon lucide-plus size-[35.5px] md:size-[48px]"
                   animate={{ rotate: isOpen ? 180 : 0 }}
-                  transition={{ duration: 0.3 }}
+                  transition={{ duration: 0.5 }}
                 >
                   <motion.path d="M5 12h14" />
                   <motion.path
                     d="M12 5v14"
+                    initial={{ opacity: 1 }}
                     animate={{ opacity: isOpen ? 0 : 1 }}
                     transition={{ duration: 0.2 }}
                   />
