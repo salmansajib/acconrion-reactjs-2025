@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "question": "Props vs State",
+    "answer": "Props and state are both plain JavaScript objects in React, but they serve different purposes. Props (short for properties) are used to pass data from parent to child components and are read-only. They help make components reusable by allowing dynamic data to be passed in. State, on the other hand, is used to manage data that can change over time within a component. State is mutable and can be updated using the useState hook or this.setState in class components. Example: A button's label can be passed as a prop, while whether it’s clicked can be tracked in state."
+  },
+  {
+    "id": 2,
+    "question": "Virtual DOM",
+    "answer": "The Virtual DOM (VDOM) is a programming concept where a virtual representation of the UI is kept in memory and synced with the real DOM by a library such as React using a process called reconciliation. When a component’s state or props change, React creates a new VDOM tree and compares it to the previous one. Only the actual changes (the 'diff') are applied to the real DOM. This minimizes direct DOM manipulation, which is slow and costly, and results in better performance and a smoother user experience."
+  },
+  {
+    "id": 3,
+    "question": "React Hooks",
+    "answer": "React Hooks are special functions that let you use state and other React features in functional components. They were introduced in React 16.8 to eliminate the need for class components. The most commonly used hooks are useState (for managing state), useEffect (for side effects like data fetching), and useContext (for accessing global data). Hooks simplify component logic and encourage code reuse. For example, useState([0]) can be used to track a counter value, and useEffect(() => fetchData(), []) can trigger an API call on mount."
+  },
+  {
+    "id": 4,
+    "question": "List Keys",
+    "answer": "Keys in React are unique identifiers assigned to elements in a list when rendering collections using .map(). They help React efficiently update the DOM by keeping track of which items changed, were added, or were removed. Without keys, React will re-render all list items instead of just the changed ones, which impacts performance. A good key is a unique and stable value — often an id from your data. Avoid using array indices as keys unless the list never changes, as this can cause bugs in dynamic lists."
+  },
+  {
+    "id": 5,
+    "question": "useEffect Hook",
+    "answer": "The useEffect hook allows you to perform side effects in functional components. These include operations like data fetching, manually updating the DOM, setting up subscriptions or timers, and more. useEffect runs after the render phase by default. You can control when it runs by providing a dependency array: useEffect(() => { ... }, [dependency]). If the array is empty, it runs only once after the first render (like componentDidMount). Cleanup functions can also be returned to prevent memory leaks."
+  }
+]
